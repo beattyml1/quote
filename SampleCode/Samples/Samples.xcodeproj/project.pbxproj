@@ -1,0 +1,71 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		322641095B19FA785B0D19F5 /* Ui2.quote */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.quote; path = Ui2.quote; sourceTree = "<group>"; };
+		32264FAA8ECED6B373EDE883 /* Ui1.quote */ = {isa = PBXFileReference; lastKnownFileType = file.quote; path = Ui1.quote; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		322641D6BA26F7C436E7B956 = {
+			isa = PBXGroup;
+			children = (
+				32264FAA8ECED6B373EDE883 /* Ui1.quote */,
+				322641095B19FA785B0D19F5 /* Ui2.quote */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		3226418B7821A76FC79E9145 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 32264A064F4F87C239E9C550 /* Build configuration list for PBXProject "Samples" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 322641D6BA26F7C436E7B956;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		322648001098AF1E8786036B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		3226491F25D10B85588A062B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		32264A064F4F87C239E9C550 /* Build configuration list for PBXProject "Samples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3226491F25D10B85588A062B /* Release */,
+				322648001098AF1E8786036B /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3226418B7821A76FC79E9145 /* Project object */;
+}

@@ -1,0 +1,47 @@
+### Code ###
+
+HtmlUI : Namespace
+{
+    ## class ##
+	UiElement : Object
+	{
+	}
+
+    ## class ##
+	Control : UiElement
+	{
+	}
+
+	## class ##
+	Panel : Html.elements.div & UiElement
+	{
+
+	}
+
+	## class ##
+	Button : Control & Html.Element.button[ type private = "button" ]
+	{
+
+	}
+
+	## class ##
+	TextBox : Control & Html.Element.textbox[ type = "button" ]
+	{
+
+	}
+}
+
+### Structure ###
+
+Namespace : MyApp.Ui
+{
+    ## class ##
+    Page : TestForm
+    {
+        MyTextBox : TextBox [ value = 'Hello World' ]{}
+
+        Button [ type = 'submit' text = 'Submit' ] `I am anonymous
+
+        RandomDataForNoGoodReason:{}
+    }
+}
