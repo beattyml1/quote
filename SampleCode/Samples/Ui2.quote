@@ -36,7 +36,7 @@ HtmlUI : Namespace
 MyApp.Ui : Namespace
 {
     ## class ##
-    Page : TestForm
+    TestForm : Page
     {
         MyTextBox : TextBox [ value = 'Hello World' ]{}
 
