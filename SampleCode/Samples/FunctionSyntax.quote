@@ -1,0 +1,37 @@
+` syntax version 1
+
+` With Implicitly typed return
+
+Fucntion : Add [ Int: x, Decimal: y ]
+{
+    return x + y
+}
+
+` With Explicitly typed return
+
+Fucntion[ Decimal ] : Add[ Int: x, Decimal: y ]
+{
+    return x + y
+}
+
+
+
+` syntax version 2
+
+` With Implicitly typed return
+
+Add [ Int: x, Decimal: y ]   : Function
+{
+    return x + y
+}
+
+` With Explicitly typed return
+
+Add[ Int: x, Decimal: y ]  : Fucntion[ Decimal ]
+{
+    return x + y
+}
+
+
+
+
