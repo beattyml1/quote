@@ -20,14 +20,14 @@ Fucntion[ Decimal ] : Add[ Int: x, Decimal: y ]
 
 ` With Implicitly typed return
 
-Add [ Int: x, Decimal: y ]   : Function
+Add [ x : Int, y : Decimal ]   : Function
 {
     return x + y
 }
 
 ` With Explicitly typed return
 
-Add[ Int: x, Decimal: y ]  : Fucntion[ Decimal ]
+Add[ x: Int, y : Decimal ]  : Fucntion[ Decimal ]
 {
     return x + y
 }
