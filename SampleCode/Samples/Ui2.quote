@@ -1,4 +1,4 @@
-### Code ###
+### code ###
 
 HtmlUI : Namespace
 {
@@ -31,9 +31,9 @@ HtmlUI : Namespace
 	}
 }
 
-### Structure ###
+### structure ###
 
-Namespace : MyApp.Ui
+MyApp.Ui : Namespace
 {
     ## class ##
     Page : TestForm
