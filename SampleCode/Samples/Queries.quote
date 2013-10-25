@@ -1,0 +1,16 @@
+db : MsSqlDbServer[ '<insert connection string>' ].MyDataBase.dbo
+
+GetByAdminState[ isAdmin : bool ] : function[ db.User ]
+{
+    query:= ~TSql[ isAdmin := isAdmin ]
+    {
+        Select * From [User] Where @isAdmin =
+    }
+
+    results:= db.Execute[ query ]
+
+    return results
+}
+
+
+

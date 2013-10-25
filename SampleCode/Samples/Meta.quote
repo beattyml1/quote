@@ -1,0 +1,23 @@
+System.Meta.Tags : Namespace
+{
+    class : Tag
+    {
+        ExecutionOn=(ExecutionTiming.Parameterization bitor ExecutionTiming.Execute)
+        DefaultBaseType = Object
+    }
+
+    function : Tag
+    {
+        ExecutionOn=(ExecutionTiming.Parameterization bitor ExecutionTiming.Execute)
+        DefaultBaseType = System.Meta.Keywords.function
+    }
+
+}
+
+System.Meta.Keywords : Namespace
+{
+    function : Object #:function
+    {
+        func = ScopeVariable
+    }
+}

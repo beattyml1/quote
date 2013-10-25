@@ -8,6 +8,8 @@
 
 /* Begin PBXFileReference section */
 		322641095B19FA785B0D19F5 /* Ui2.quote */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.quote; path = Ui2.quote; sourceTree = "<group>"; };
+		3226459EA40CAEF435D2A3DA /* Meta.quote */ = {isa = PBXFileReference; lastKnownFileType = file.quote; path = Meta.quote; sourceTree = "<group>"; };
+		32264D33B387976C5203F4C6 /* Queries.quote */ = {isa = PBXFileReference; lastKnownFileType = file.quote; path = Queries.quote; sourceTree = "<group>"; };
 		32264D6F29D73F2B617BDE5E /* FunctionSyntax.quote */ = {isa = PBXFileReference; lastKnownFileType = file.quote; path = FunctionSyntax.quote; sourceTree = "<group>"; };
 		32264FAA8ECED6B373EDE883 /* Ui1.quote */ = {isa = PBXFileReference; lastKnownFileType = file.quote; path = Ui1.quote; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -19,6 +21,8 @@
 				32264FAA8ECED6B373EDE883 /* Ui1.quote */,
 				322641095B19FA785B0D19F5 /* Ui2.quote */,
 				32264D6F29D73F2B617BDE5E /* FunctionSyntax.quote */,
+				32264D33B387976C5203F4C6 /* Queries.quote */,
+				3226459EA40CAEF435D2A3DA /* Meta.quote */,
 			);
 			sourceTree = "<group>";
 		};
