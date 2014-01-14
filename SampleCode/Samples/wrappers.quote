@@ -1,0 +1,42 @@
+@class MyCoreClass
+{
+	@property LocalValue : int
+	@property GlobalValue : int
+	@propety GlobalObject : Object
+	@propety LocalObject : Object
+}
+
+@class MyWrapper1 : BaseClass
+{
+	@wrap[ MyCoreClass, include = sys.wrap.PublicValues ]
+	{
+		@hide LocalProperty
+		@include GlobalObject
+	}
+	
+	@method MySharedMethod[]
+	{
+		` do something
+	}
+	
+	@method MyPrivateMethod[] #private 
+	{
+		` do something
+	}
+}
+
+@class MyWrapper2 : BaseClass #wrap[ MyCoreClass, include = sys.wrap.PublicValues ]
+{
+	@hide LocalProperty
+	@keep GlobalObject
+	
+	@method MySharedMethod[]
+	{
+		` do something
+	}
+	
+	@method MyPrivateMethod[] #private 
+	{
+		` do something
+	}
+}

@@ -1,0 +1,91 @@
+@section DataObjects
+{
+	@class User[ other: User ] : DataObject ` DataObject contains copy and load by code referencing the data and isChanged tags
+	{
+		@property UserID : Guid #pk                 #isChanged #data
+		@property UserName : VarChar[100]
+	}
+
+	@class BlogPost[ other: BlogPost ] : DataObject ` DataObject contains copy and load by code referencing the data and isChanged tags
+	{
+		@property BlogPostID : Guid #pk   #isChanged #data
+		@property Title : VarChar[255]    #isChanged #data
+		@property Content: LimitedHtml    #isChanged #data
+		@property CreatedByID : Guid        #isChanged #data
+		@property LastUpdateByID: Guid      #isChanged #data
+		
+		@property CreatedBy : User
+		@property LastUpdatedBy : User
+		
+		@relationship FK_BlogPost_CreatedBy[ BlogPost->CreateBy, User->UserID, BlogPost->CreatedBy ]
+		@relationship FK_BlogPost_LastUpdatedBy[ BlogPost->CreateBy, User->UserID, BlogPost->LastUpdatedBy ]
+	}
+	
+	@class Comment[ other: Comment ] : DataObject
+	{
+		@property CommentID : Guid #pk                 			#isChanged #data
+		@property BlogPostID : Guid #fk[BlogPost->BlogPostID]   #isChanged #data
+		@property Content: Text                					#isChanged #data
+		@property UserID: Guid          						#isChanged #data
+		
+		@property User: User         							#isChanged #data
+		
+		@relationship FK_BlogPost_User[ BlogPost->CreateBy, User->UserID, BlogPost->User ]
+	}
+}
+
+@section BusinessObjects
+{
+	@wrapper[ DataObjects.BlogPost ] BlogPost :  BusinessObject & 
+	{	
+		` Business Logic
+	
+		@target WebAppServer
+		{
+			_dataAccessObject = DataAccesssObjects.DataAccessObject.Create[ _wrapped ]
+			
+			@method LoadByID[ id : Guid ] : BlogPost
+			{
+				data := _dataAcessObject.LoadSql[ _loadByIdSql[ id ] ]
+			}
+			
+			@method LoadByID[ id : Guid ] : BlogPost
+			{
+				data := _dataAcessObject.LoadSql[ _loadByIdSql ]
+				
+				return data.Select[BlogPost]
+			}
+			
+			@method Save[]
+			{
+				_dataAccessObject.Save[]
+			}
+			
+			@TSql _loadByIdSql[ id: Guid ] #private
+			{
+				Select * From BlogPost Where BlogPostID = @id
+			}
+			
+			@TSql _loadAllSql #private
+			{
+				Select * From BlogPost
+			}
+		}
+	}
+	
+	@wrapper[ DataObjects.Comment ] Comment :  BusinessObject 
+	{	
+		` Business Logic
+	
+		@target WebAppServer
+		{
+			_dataAccessObject = DataAccesssObjects.DataAccessObject.Create[ _wrapped ]
+			
+			@method Save[]
+			{
+				_dataAccessObject.Save[]
+			}
+		}
+	}
+}
+
