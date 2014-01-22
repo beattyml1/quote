@@ -40,3 +40,20 @@
 		` do something
 	}
 }
+
+@wrapper[ MyCoreClass, include = sys.wrap.PublicValues ]
+@class MyWrapper3[ T ][ args ] : BaseClass
+{
+	@hide LocalProperty
+	@keep GlobalObject
+	
+	@method MySharedMethod[]
+	{
+		` do something
+	}
+	
+	@method MyPrivateMethod[] #private 
+	{
+		` do something
+	}
+}
