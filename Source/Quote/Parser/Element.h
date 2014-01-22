@@ -4,10 +4,10 @@ class Element
 		vector<ElementList> AttributeTemplates;
 		ElementList Content;
 		
-		vector<string> Tags;
-		string Macro;
-		list<string> ThisSelector
-		list<string> ParentSelector;
+		vector<Element*> Tags;
+		Element* Macro;
+		Element* SelectorParent
+		vector<Element*> InheritanceParent;
 }
 
-typedef ElementList Element*
+typedef ElementList Element* // A pointer to the first element in the list
