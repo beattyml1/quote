@@ -1,5 +1,8 @@
 class Element
 {
+	public:
+		Object* ToObject();
+
 	public: // Propeties - Get
 		string 				Name();
 		vector<Element*> 	Tags();
