@@ -1,31 +1,31 @@
 
-ParsePrefixWord(ICharStream stream)
+void Word::ParsePrefixWord()
 {
 	qchar prefixChar;
 	int level = 1;
 	
-	prefixChar = stream.Pop();
+	prefixChar = _stream.Pop();
 	
-	while (stream.HasMore() && stream.Peek() == prefixChar)
+	while (_stream.HasMore() && _stream.Peek() == prefixChar)
 	{	
-		stream.Pop();
+		_stream.Pop();
 		level++;
 	}
 	
 	switch (prefixChar)
 	{
 		case '@':
-			WordType = WordType.Macro;
+			_type = WordType.Macro;
 			break;
 		case '#':
-			WordType = WordType.Tag;
+			_type = WordType.Tag;
 			break;
 	}
 	
-	WordType += level;
+	_type += level;
 	
 	if (level == 1)
 	{
-		ParseStartContinueWord(stream, true);
+		ParseStartContinueWord(Name, NameContinueChars, NameContinueCharsLength);
 	}
 }

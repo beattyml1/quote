@@ -1,6 +1,6 @@
 
 
-Word ParseStartContinueWord(ICharStream stream,  WordType type, qchar[] continueChars, int continueCharsLength)
+void Word::ParseStartContinueWord(WordType type, qchar[] continueChars, int continueCharsLength)
 {
 	if (type == Name) 
 	{
@@ -15,11 +15,10 @@ Word ParseStartContinueWord(ICharStream stream,  WordType type, qchar[] continue
 	
 	list<qchar> buffer;
 	
-	while (stream.HasMore() and Contains(continueChars, continueCharsLength, stream.Peek())
+	while (_stream.HasMore() and Contains(continueChars, continueCharsLength, _stream.Peek())
 	{
-		buffer.append(stream.Pop());
+		buffer.append(_stream.Pop());
 	}
 	
-	Conent = buffer.ToArray();
-	ContentLength = buffer.count;
+	_content = ToString(buffer);
 }

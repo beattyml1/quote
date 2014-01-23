@@ -1,55 +1,57 @@
-Parse(ICharStream stream)
+Word* Word::Parse(ICharStream _stream)
 {
-	qchar first = stream.Peek();
+	qchar first = _stream.Peek();
 	
 	switch (first)
 	{
 		case '@':
 		case '#':
-			ParsePrefixWord(stream);
+			ParsePrefixWord(_stream);
 			break;
 		case '"':
 		case '\'':
-			ParseString(stream);
+			ParseString(_stream);
 			break;
 		case ',':
 		case ';': 
-			ParseSeperator(stream);
+			ParseSeperator(_stream);
 		case '`':
 		case '~':
-			ParseComment(stream);
+			ParseComment(_stream);
 			break;
 		case ':':
-			ParseDeclaration(stream);
+			ParseDeclaration(_stream);
 			break;
 		case '.':
-			ParseMembership(stream);
+			ParseMembership(_stream);
 			break;
 		case '{': case '}' 
 		case '[': case ']'
 		case '(': case ')':
-			FolderAction(stream);
+			FolderAction(_stream);
 			break;
 		default:
 			if (IsSpace(first)
-				ParseSpace(stream);
+				ParseSpace(_stream);
 			if (IsSymbolic(first))
-				ParseSymbolic(stream)
+				ParseSymbolic(_stream)
 			else
 			{
-				if (IsNameStart(stream.Peek()))
-					ParseStartContinue(stream, Type = Name, NameContinueChars, NameContinueCharsLength);
+				if (IsNameStart(_stream.Peek()))
+					ParseStartContinue(_stream, _type = Name, NameContinueChars, NameContinueCharsLength);
 				else 
-					ParseStartContinue(stream, Type = Name, NumericContinueChars, NumericContinueCharsLength);
+					ParseStartContinue(_stream, _type = Numeric, NumericContinueChars, NumericContinueCharsLength);
 					
 			}
 	}
 }
 
-void ParseSpace(ICharStream stream)
+void Word::ParseSpace(ICharStream _stream)
 {
-	while (stream.HasMore() and IsWhiteSpace(stream.Peek()))
+	while (_stream.HasMore() and IsWhiteSpace(_stream.Peek()))
 	{
-		stream.Pop();
+		_stream.Pop();
 	}
 }
+
+Word*
