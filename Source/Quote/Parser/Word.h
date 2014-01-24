@@ -1,10 +1,10 @@
 class Word
 {
 	public: // Constructors
-		Word(ICharStream* stream);
+		Word(ISource* stream);
 		
 	public: // Methods
-		Word* ParseNext(ICharStream stream);
+		Word* ParseNext();
 		Word* AddNext(WordType type, string content);
 		Element* CreateElement();
 	
@@ -13,9 +13,10 @@ class Word
 		WordType 	 Type();
 		Word*		 Next();
 		Word*		 Previous();
-		ICharStream* Stream();
+		ISource*     Stream();
 		Word* 		 FolderRoot();
 		Word*		 FolderParent();
+		SourceInfo*  SourceInformation();
 		
 	private: // Methods
 		void Parse();
@@ -28,7 +29,7 @@ class Word
 	private: // Variables
 		string 			_content;
 		WordType 		_type;
-		ICharStream* 	_stream;
+		ISource* 		_stream;
 		Word*			_folderRoot;
 		Word*			_folderParent;
 		qchar			_close;

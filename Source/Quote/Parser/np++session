@@ -1,0 +1,16 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="8">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="C:\Users\matthew\Documents\GitHub\quote\Source\Quote\Parser\Element.cpp" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="C:\Users\matthew\Documents\GitHub\quote\Source\Quote\Parser\Element.h" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="C:\Users\matthew\Documents\GitHub\quote\Source\Quote\Parser\enum.h" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="C:\Users\matthew\Documents\GitHub\quote\Source\Quote\Parser\ICharStream.h" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="C:\Users\matthew\Documents\GitHub\quote\Source\Quote\Parser\PrefixWord.cpp" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="C:\Users\matthew\Documents\GitHub\quote\Source\Quote\Parser\StartContinueWord.h" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="C:\Users\matthew\Documents\GitHub\quote\Source\Quote\Parser\util.h" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="C:\Users\matthew\Documents\GitHub\quote\Source\Quote\Parser\Word.cpp" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="792" startPos="190" endPos="190" selMode="0" lang="C++" encoding="-1" filename="C:\Users\matthew\Documents\GitHub\quote\Source\Quote\Parser\Word.h" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>

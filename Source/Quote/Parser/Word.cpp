@@ -33,7 +33,7 @@ Word* Word::Parse(ICharStream _stream)
 		case '}': 	
 		case ']':	
 		case ')':
-			FolderClose();
+			FolderClose(); // Probably nothing
 			break;
 		default:
 			if (IsSpace(first)
@@ -53,13 +53,20 @@ Word* Word::Parse(ICharStream _stream)
 
 void Word::ParseSpace()
 {
-	while (_stream.HasMore() and IsWhiteSpace(_stream.Peek()))
+	qchar current;
+	
+	while (_stream.HasMore() and IsWhiteSpace(current = _stream.Peek()))
 	{
+		if (current == '\n')
+		{
+			_stream.IncrementLineNumber();
+		}
+		
 		_stream.Pop();
 	}
 }
 
-void Word::FolderAction()
+void Word::FolderOpen()
 {
 	qchar open = _stream.Pop();
 	qchar close;
@@ -80,18 +87,23 @@ void Word::FolderAction()
 			break;
 	}
 	
-	_folderRoot = folderItem = new Word();
-	_folderRoot->_folderParent;
-	_folderRoot->Parse();
-	 
-	while (folder = folder->ParseNext());
+	ParseFolderContents();
 	
 	qchar close = _stream.Pop();
 	
 	if (close != _close)
 	{
-		_compilerError.Log(String() + "Mismatching folder open and close type. Expected '" + _close + "' and encountered '" + close +"'")
+		_compilerError.Log(String() + "Mismatching folder open and close type. Expected '" + _close + "' and encountered '" + close +"'", this)
 	}
+}
+
+void Word::ParseFolderContents()
+{
+	_folderRoot = folderItem = new Word();
+	_folderRoot->_folderParent;
+	_folderRoot->Parse();
+	 
+	while (folder = folder->ParseNext());
 }
 
 

@@ -15,10 +15,13 @@ void Word::ParsePrefixWord()
 	switch (prefixChar)
 	{
 		case '@':
-			_type = WordType.Macro;
+			_type = MACRO;
 			break;
 		case '#':
-			_type = WordType.Tag;
+			_type = TAG;
+			break;
+		case '?': 
+			_type = QUERY_SIMPLE;
 			break;
 	}
 	
@@ -28,4 +31,28 @@ void Word::ParsePrefixWord()
 	{
 		ParseStartContinueWord(Name, NameContinueChars, NameContinueCharsLength);
 	}
+	else
+	{
+		ProcessStartEndWord(prefixChar, level);
+	}
+}
+
+void Word::ProcessStartEndWord(qchar prefixChar, int level)
+{
+	int openLevel = _parser.State().WrapperLevel(prefixChar); // 0 if not in wrapper otherwise wrapper level
+	
+	if (openLevel == 0)
+	{
+		ParseFolderContents();
+	}
+	else
+	{
+		if (level != openLevel)
+		{
+			_parser.Host().ParserErrorLogger().Log(Errors::MismatchStartEnd(prefixChar, level))
+		}
+		
+		ParseNext(); // TODO: Should compiler continue
+	}
+	
 }
