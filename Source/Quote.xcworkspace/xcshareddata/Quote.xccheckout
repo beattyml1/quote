@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>451E5ED7-84F1-467E-8907-B98C42CFDD1E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Quote</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>00994599-6495-4319-9479-4939A6F9B926</key>
+		<string>https://github.com/beattyml1/quote.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Source/Quote.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>00994599-6495-4319-9479-4939A6F9B926</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/beattyml1/quote.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>00994599-6495-4319-9479-4939A6F9B926</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>00994599-6495-4319-9479-4939A6F9B926</string>
+			<key>IDESourceControlWCCName</key>
+			<string>quote</string>
+		</dict>
+	</array>
+</dict>
+</plist>
